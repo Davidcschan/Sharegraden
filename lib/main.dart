@@ -7,59 +7,76 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: LoginPage(),
+    );
+  }
+}
+class LoginPage extends StatefulWidget {
+    @override
 
-      theme: ThemeData(
+  _LooginpageState createState() => _LooginpageState();
 
-        primarySwatch: Colors.blue,
+}
+
+class _LooginpageState extends State<LoginPage>{
+  @override 
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Column(
+        
+        children: <Widget>[
+          Container(
+            child: Column(
+              
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(top: 100),
+                  child: Image.asset('images/sg_app_icon.png'),
+                  width: 100,
+                  
+                  
+                
+                alignment: Alignment.center,
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 50),
+                  child: Column( 
+                    crossAxisAlignment: CrossAxisAlignment.start,                   
+                    children: <Widget>[
+                      Text("Email",
+                      style: 
+                      TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey,
+                        decoration: TextDecoration.underline,
+                        decorationStyle: TextDecorationStyle.double,
+                        decorationColor: Colors.grey),),
+                      TextFormField(
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.perm_identity),
+
+                        labelText: 'Enter yout email: ',
+                        labelStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.grey),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.green),
+                          ),
+                          ),
+                    ) 
+                  ],),
+                ),
+                
+              ],
+          ),
+          ),
+        ],
       ),
-      home: Loginpage(),
     );
   }
 }
 
-
-
-class Loginpage extends StatelessWidget {
-  @override
-  
-  Widget build(BuildContext contrext){
-    return MateriaApp(
       
-    
-    Widget loginlist = Container(
-      padding: const EdgeInsets.all(30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Container(
-            child: Text(
-              'Email: ',
-              style: TextStyle(
-                fontSize: 40,
-                color: Colors.white
-              ),
-            ),
-          ),
-          Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,          
-          children: <Widget>[
-            Icon(Icons.perm_identity),
-            Text('Enter your Email: ',
-            style: TextStyle(color: Colors.black,
-            fontFamily: "Courier",
-            decoration: TextDecoration.underline,),)
 
-          
+                    
 
-          ],
-
-
-          )
-
-
-    ],),);
-  }
-
-}
